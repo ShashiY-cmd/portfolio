@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MobileMenu } from "./MobileMenu";
 
 export const navigationItems = [
   {
@@ -53,6 +55,12 @@ export function Navbar() {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
+      </div>
+      <div className="flex items-center justify-end md:col-span-3 col-span-6">
+        <Button className="hidden sm:block">Contact Me</Button>
+        <div className="sm:hidden">
+          <MobileMenu />
+        </div>
       </div>
     </nav>
   );
